@@ -29,7 +29,7 @@ install-aws-codegen:
 
 .PHONY: aws-codegen
 aws-codegen:
-	aws-service-operator-codegen process
+	aws-service-operator-codegen process --root-path=vendor/github.com/awslabs/aws-service-operator/
 
 .PHONY: k8s-codegen
 k8s-codegen:

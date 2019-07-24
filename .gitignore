@@ -5,3 +5,8 @@ pod-role.json
 kubeconfig
 dist/
 .envrc
+.idea/**
+*.iml
+vendor/cloud.google.com
+vendor/golang.org
+vendor/google.golang.org
