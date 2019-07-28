@@ -29,8 +29,6 @@ type Interface interface {
 	ECRRepositories() ECRRepositoryInformer
 	// ElastiCaches returns a ElastiCacheInformer.
 	ElastiCaches() ElastiCacheInformer
-	// GenericTopics returns a GenericTopicInformer.
-	GenericTopics() GenericTopicInformer
 	// S3Buckets returns a S3BucketInformer.
 	S3Buckets() S3BucketInformer
 	// SNSSubscriptions returns a SNSSubscriptionInformer.
@@ -39,8 +37,6 @@ type Interface interface {
 	SNSTopics() SNSTopicInformer
 	// SQSQueues returns a SQSQueueInformer.
 	SQSQueues() SQSQueueInformer
-	// Tests returns a TestInformer.
-	Tests() TestInformer
 }
 
 type version struct {
@@ -74,11 +70,6 @@ func (v *version) ElastiCaches() ElastiCacheInformer {
 	return &elastiCacheInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
-// GenericTopics returns a GenericTopicInformer.
-func (v *version) GenericTopics() GenericTopicInformer {
-	return &genericTopicInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
 // S3Buckets returns a S3BucketInformer.
 func (v *version) S3Buckets() S3BucketInformer {
 	return &s3BucketInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
@@ -97,9 +88,4 @@ func (v *version) SNSTopics() SNSTopicInformer {
 // SQSQueues returns a SQSQueueInformer.
 func (v *version) SQSQueues() SQSQueueInformer {
 	return &sQSQueueInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
-}
-
-// Tests returns a TestInformer.
-func (v *version) Tests() TestInformer {
-	return &testInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

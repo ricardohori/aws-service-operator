@@ -58,8 +58,6 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().ECRRepositories().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("elasticaches"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().ElastiCaches().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("generictopics"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().GenericTopics().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("s3buckets"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().S3Buckets().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("snssubscriptions"):
@@ -68,8 +66,6 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().SNSTopics().Informer()}, nil
 	case v1alpha1.SchemeGroupVersion.WithResource("sqsqueues"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().SQSQueues().Informer()}, nil
-	case v1alpha1.SchemeGroupVersion.WithResource("tests"):
-		return &genericInformer{resource: resource.GroupResource(), informer: f.Serviceoperator().V1alpha1().Tests().Informer()}, nil
 
 	}
 

@@ -23,8 +23,6 @@ type ECRRepositoryExpansion interface{}
 
 type ElastiCacheExpansion interface{}
 
-type GenericTopicExpansion interface{}
-
 type S3BucketExpansion interface{}
 
 type SNSSubscriptionExpansion interface{}
@@ -32,5 +30,3 @@ type SNSSubscriptionExpansion interface{}
 type SNSTopicExpansion interface{}
 
 type SQSQueueExpansion interface{}
-
-type TestExpansion interface{}

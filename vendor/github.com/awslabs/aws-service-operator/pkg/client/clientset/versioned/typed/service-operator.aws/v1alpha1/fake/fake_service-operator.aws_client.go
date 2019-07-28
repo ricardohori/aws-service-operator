@@ -41,10 +41,6 @@ func (c *FakeServiceoperatorV1alpha1) ElastiCaches(namespace string) v1alpha1.El
 	return &FakeElastiCaches{c, namespace}
 }
 
-func (c *FakeServiceoperatorV1alpha1) GenericTopics(namespace string) v1alpha1.GenericTopicInterface {
-	return &FakeGenericTopics{c, namespace}
-}
-
 func (c *FakeServiceoperatorV1alpha1) S3Buckets(namespace string) v1alpha1.S3BucketInterface {
 	return &FakeS3Buckets{c, namespace}
 }
@@ -59,10 +55,6 @@ func (c *FakeServiceoperatorV1alpha1) SNSTopics(namespace string) v1alpha1.SNSTo
 
 func (c *FakeServiceoperatorV1alpha1) SQSQueues(namespace string) v1alpha1.SQSQueueInterface {
 	return &FakeSQSQueues{c, namespace}
-}
-
-func (c *FakeServiceoperatorV1alpha1) Tests(namespace string) v1alpha1.TestInterface {
-	return &FakeTests{c, namespace}
 }
 
 // RESTClient returns a RESTClient that is used to communicate

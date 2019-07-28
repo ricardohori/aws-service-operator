@@ -28,12 +28,10 @@ type ServiceoperatorV1alpha1Interface interface {
 	DynamoDBsGetter
 	ECRRepositoriesGetter
 	ElastiCachesGetter
-	GenericTopicsGetter
 	S3BucketsGetter
 	SNSSubscriptionsGetter
 	SNSTopicsGetter
 	SQSQueuesGetter
-	TestsGetter
 }
 
 // ServiceoperatorV1alpha1Client is used to interact with features provided by the serviceoperator.aws group.
@@ -57,10 +55,6 @@ func (c *ServiceoperatorV1alpha1Client) ElastiCaches(namespace string) ElastiCac
 	return newElastiCaches(c, namespace)
 }
 
-func (c *ServiceoperatorV1alpha1Client) GenericTopics(namespace string) GenericTopicInterface {
-	return newGenericTopics(c, namespace)
-}
-
 func (c *ServiceoperatorV1alpha1Client) S3Buckets(namespace string) S3BucketInterface {
 	return newS3Buckets(c, namespace)
 }
@@ -75,10 +69,6 @@ func (c *ServiceoperatorV1alpha1Client) SNSTopics(namespace string) SNSTopicInte
 
 func (c *ServiceoperatorV1alpha1Client) SQSQueues(namespace string) SQSQueueInterface {
 	return newSQSQueues(c, namespace)
-}
-
-func (c *ServiceoperatorV1alpha1Client) Tests(namespace string) TestInterface {
-	return newTests(c, namespace)
 }
 
 // NewForConfig creates a new ServiceoperatorV1alpha1Client for the given config.

@@ -47,14 +47,6 @@ type ElastiCacheListerExpansion interface{}
 // ElastiCacheNamespaceLister.
 type ElastiCacheNamespaceListerExpansion interface{}
 
-// GenericTopicListerExpansion allows custom methods to be added to
-// GenericTopicLister.
-type GenericTopicListerExpansion interface{}
-
-// GenericTopicNamespaceListerExpansion allows custom methods to be added to
-// GenericTopicNamespaceLister.
-type GenericTopicNamespaceListerExpansion interface{}
-
 // S3BucketListerExpansion allows custom methods to be added to
 // S3BucketLister.
 type S3BucketListerExpansion interface{}
@@ -86,11 +78,3 @@ type SQSQueueListerExpansion interface{}
 // SQSQueueNamespaceListerExpansion allows custom methods to be added to
 // SQSQueueNamespaceLister.
 type SQSQueueNamespaceListerExpansion interface{}
-
-// TestListerExpansion allows custom methods to be added to
-// TestLister.
-type TestListerExpansion interface{}
-
-// TestNamespaceListerExpansion allows custom methods to be added to
-// TestNamespaceLister.
-type TestNamespaceListerExpansion interface{}

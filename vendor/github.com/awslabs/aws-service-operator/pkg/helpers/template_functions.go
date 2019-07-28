@@ -19,7 +19,6 @@ func New() Helpers {
 		GetDynamoDBByName:               GetDynamoDBByName,
 		GetECRRepositoryByName:          GetECRRepositoryByName,
 		GetElastiCacheByName:            GetElastiCacheByName,
-		GetGenericTopicByName:           GetGenericTopicByName,
 		GetS3BucketByName:               GetS3BucketByName,
 		GetSNSSubscriptionByName:        GetSNSSubscriptionByName,
 		GetSNSTopicByName:               GetSNSTopicByName,
@@ -34,7 +33,6 @@ type Helpers struct {
 	GetDynamoDBByName               func(config.Config, string, string) (interface{}, error)
 	GetECRRepositoryByName          func(config.Config, string, string) (interface{}, error)
 	GetElastiCacheByName            func(config.Config, string, string) (interface{}, error)
-	GetGenericTopicByName           func(config.Config, string, string) (interface{}, error)
 	GetS3BucketByName               func(config.Config, string, string) (interface{}, error)
 	GetSNSSubscriptionByName        func(config.Config, string, string) (interface{}, error)
 	GetSNSTopicByName               func(config.Config, string, string) (interface{}, error)
@@ -85,19 +83,6 @@ func GetElastiCacheByName(config config.Config, name string, namespace string) (
 	logger := config.Logger
 	clientSet, _ := awsclient.NewForConfig(config.RESTConfig)
 	resource, err := clientSet.ElastiCaches(namespace).Get(name, metav1.GetOptions{})
-	if err != nil {
-		logger.WithError(err).Error("error getting sns topic")
-		return "", err
-	}
-
-	return resource, nil
-}
-
-// GetGenericTopicByName will find the resource by name
-func GetGenericTopicByName(config config.Config, name string, namespace string) (interface{}, error) {
-	logger := config.Logger
-	clientSet, _ := awsclient.NewForConfig(config.RESTConfig)
-	resource, err := clientSet.GenericTopics(namespace).Get(name, metav1.GetOptions{})
 	if err != nil {
 		logger.WithError(err).Error("error getting sns topic")
 		return "", err
